@@ -1,0 +1,19 @@
+name: Build RevokeMsgPatcher
+on:
+  push:
+  workflow_dispatch: # 允许网页手动点按钮Run workflow触发
+
+jobs:
+  build:
+    runs-on: windows‑latest # .NET Framework必须Windows虚拟机
+    steps:
+      - uses: actions/checkout@v4
+      - name: Nuget还原
+        run: nuget restore RevokeMsgPatcher.sln
+      - name: MSBuild编译Release
+        run: msbuild RevokeMsgPatcher.sln /p:Configuration=Release /p:Platform="Any CPU"
+      - name: 上传产物
+        uses: actions/upload‑artifact@v4
+        with:
+          name: RevokeMsgPatcher‑bin
+          path: RevokeMsgPatcher/bin/Release/**
