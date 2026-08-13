@@ -55,10 +55,7 @@ namespace RevokeMsgPatcher.Matcher
                     {
                         throw new BusinessException("match_inconformity", $"特征比对：以下功能补丁已经安装，请取消勾选！\n已安装功能：【{string.Join("、", res.Item2)}】");
                     }
-                    else
-                    {
-                        null;
-                    }
+                   
                 }
             }
             else
