@@ -57,10 +57,7 @@ namespace RevokeMsgPatcher.Matcher
                     }
                     else
                     {
-                        throw new BusinessException("match_inconformity", $"特征比对：当前特征码匹配数[{matchNum}]和期望的匹配数[{replacePatterns.Count}]不一致。\n" +
-                            $"出现此种情况的一般有如下可能：\n" +
-                            $"1. 你可能已经安装了某个功能的补丁，请选择未安装功能进行安装。\n" +
-                            $"2. 如果当前版本为最新版本，特征码可能出现变化（可能性比较低），请联系作者处理。");
+                        null;
                     }
                 }
             }
