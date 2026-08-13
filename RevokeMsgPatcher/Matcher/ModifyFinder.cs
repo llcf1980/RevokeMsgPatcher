@@ -49,14 +49,7 @@ namespace RevokeMsgPatcher.Matcher
                 {
                     throw new BusinessException("match_already_replace", "特征比对：当前应用已经安装了对应功能的补丁！");
                 }
-                else
-                {
-                    if (res.Item2.Count > 0)
-                    {
-                        throw new BusinessException("match_inconformity", $"特征比对：以下功能补丁已经安装，请取消勾选！\n已安装功能：【{string.Join("、", res.Item2)}】");
-                    }
-                   
-                }
+            
             }
             else
             {
